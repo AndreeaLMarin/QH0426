@@ -1,16 +1,22 @@
 def observed():
   observations = set()
-  for i in range(7):
-    item = input("Enter an item: ")
-    observations.add(item)
+  for count in range(7):
+    print("Please enter an observation:")
+    obs = input()
+    observations.append(obs)
   return observations
 def run():
   print("Counting observations...")
-  l = observed()
-  for i in l:
-    print(i)
-    count = count + 1
-    print(i)
+  observations = observed()
+
+  observations_set = set()
+for observation in observations:
+  data = (observation, observations.count(observation))
+  observations_set.add(data)
+
+for data in observations_set:
+  print(f"{data[0]} observed {data[1]} time.")
+  
   
   
 
